@@ -1,4 +1,6 @@
+/* Generate computer's game choice */
 function getComputerChoice() {
+
     let num = Math.floor(Math.random() * 3);
     
     if (num === 1) {
@@ -10,14 +12,20 @@ function getComputerChoice() {
     }
 }
 
+/* Generate player's game choice, and set it to all lower case */
 function getHumanChoice() {
     return prompt("Choose rock, paper, or scissors.").toLowerCase();
 }
 
-let humanScore = 0;
-let computerScore = 0;
+    /* Yes, I could absolutely make these variables not global for better access, but 
+    I didn't want to refactor my functions to do it. */
+    // Score variables
+    let humanScore = 0;
+    let computerScore = 0;
 
+/* Plays one round of rock, paper, scissors, incrementing correct score value */
 function playRound(humanChoice, computerChoice) {
+
     console.log(`Player chose ${humanChoice}. Computer chose ${computerChoice}.`);
     
     if (((humanChoice === 'rock') && (computerChoice === 'scissors')) || ((humanChoice === 'paper') && (computerChoice === 'rock')) || ((humanChoice === 'scissors') && (computerChoice === 'paper'))) {
@@ -33,7 +41,28 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Player score: ${humanScore} | Computer Score: ${computerScore}`);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+/* Plays a 5-round game of rock, paper, scissors. Sets score values to 0 at the start of each game. */
+function playGame() {
 
-playRound(humanSelection, computerSelection);
+    humanScore = 0;
+    computerScore = 0;
+
+    for (i = 1; i < 6; i++) {
+        console.log(`Round ${i}:`);
+
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore > computerScore) {
+        console.log("Player wins the game!");
+    } else if (humanScore < computerScore) {
+        console.log("Computer wins the game!");
+    } else {
+        console.log("Game is a tie!");
+    }
+}
+
+playGame();
