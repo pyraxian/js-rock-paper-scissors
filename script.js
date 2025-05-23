@@ -15,3 +15,6 @@ function getHumanChoice() {
 }
 
 console.log(`The player chose: ${getHumanChoice()}`);
+
+let humanScore = 0;
+let computerScore = 0;
