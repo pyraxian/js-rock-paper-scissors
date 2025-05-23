@@ -30,7 +30,10 @@ function playRound(humanChoice, computerChoice) {
         console.log("Tie!");
     }
 
-    console.log(`Player score: ${humanScore}| Computer Score: ${computerScore}`);
+    console.log(`Player score: ${humanScore} | Computer Score: ${computerScore}`);
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
