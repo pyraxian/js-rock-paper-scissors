@@ -46,6 +46,7 @@ const btn = document.querySelector("#buttonContainer");
 
 btn.addEventListener("click", (event) => {
     console.log(`${event.target.id} was clicked`);
+    playRound(event.target.id, getComputerChoice());
 });
 
 
