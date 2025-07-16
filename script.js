@@ -41,6 +41,11 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Player score: ${humanScore} | Computer Score: ${computerScore}`);
 }
 
+/* Event listener */
+const btn = document.querySelector("#rock");
+
+
+
 /* Plays a 5-round game of rock, paper, scissors. Sets score values to 0 at the start of each game. */
 // function playGame() {
 
