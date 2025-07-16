@@ -42,27 +42,27 @@ function playRound(humanChoice, computerChoice) {
 }
 
 /* Plays a 5-round game of rock, paper, scissors. Sets score values to 0 at the start of each game. */
-function playGame() {
+// function playGame() {
 
-    humanScore = 0;
-    computerScore = 0;
+//     humanScore = 0;
+//     computerScore = 0;
 
-    for (i = 1; i < 6; i++) {
-        console.log(`Round ${i}:`);
+//     for (i = 1; i < 6; i++) {
+//         console.log(`Round ${i}:`);
 
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
+//         let humanSelection = getHumanChoice();
+//         let computerSelection = getComputerChoice();
 
-        playRound(humanSelection, computerSelection);
-    }
+//         playRound(humanSelection, computerSelection);
+//     }
 
-    if (humanScore > computerScore) {
-        console.log("Player wins the game!");
-    } else if (humanScore < computerScore) {
-        console.log("Computer wins the game!");
-    } else {
-        console.log("Game is a tie!");
-    }
-}
+//     if (humanScore > computerScore) {
+//         console.log("Player wins the game!");
+//     } else if (humanScore < computerScore) {
+//         console.log("Computer wins the game!");
+//     } else {
+//         console.log("Game is a tie!");
+//     }
+// }
 
-playGame();
+// playGame();
