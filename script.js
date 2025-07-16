@@ -13,6 +13,7 @@ btn.addEventListener("click", (event) => {
 });
 
 /* Generate computer's game choice */
+/* Deprecated with addition of UI */
 function getComputerChoice() {
 
     let num = Math.floor(Math.random() * 3);
@@ -27,6 +28,7 @@ function getComputerChoice() {
 }
 
 /* Generate player's game choice, and set it to all lower case */
+/* Deprecated with addition of UI */
 function getHumanChoice() {
     return prompt("Choose rock, paper, or scissors.").toLowerCase();
 }
@@ -39,7 +41,10 @@ function playRound(humanChoice, computerChoice) {
     const scoreDisplay = document.querySelector('score');
     const matchResults = document.querySelector('matchResults');
 
+    console.log(scoreDisplay.textContent);
+
     console.log(`Player chose ${humanChoice}. Computer chose ${computerChoice}.`);
+    //choicesDisplay.textContent = `Player chose ${humanChoice}. Computer chose ${computerChoice}.`;
     
     if (((humanChoice === 'rock') && (computerChoice === 'scissors')) || ((humanChoice === 'paper') && (computerChoice === 'rock')) || ((humanChoice === 'scissors') && (computerChoice === 'paper'))) {
         console.log("Player wins!");
@@ -51,7 +56,7 @@ function playRound(humanChoice, computerChoice) {
         console.log("Tie!");
     }
 
-    // scoreDisplay.textContent = `Player score: ${humanScore} | Computer Score: ${computerScore}`;
+    //scoreDisplay.textContent = `Player score: ${humanScore} | Computer Score: ${computerScore}`;
 }
 
 /* Plays a 5-round game of rock, paper, scissors in the console. Sets score values to 0 at the start of each game. */
