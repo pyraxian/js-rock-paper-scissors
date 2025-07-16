@@ -42,7 +42,11 @@ function playRound(humanChoice, computerChoice) {
 }
 
 /* Event listener */
-const btn = document.querySelector("#rock");
+const btn = document.querySelector("#buttonContainer");
+
+btn.addEventListener("click", (event) => {
+    console.log(`${event.target.id} was clicked`);
+});
 
 
 
