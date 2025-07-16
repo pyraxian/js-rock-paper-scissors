@@ -1,3 +1,17 @@
+/* Yes, I could absolutely make these variables not global for better access, but 
+I didn't want to refactor my functions to do it. */
+// Score variables
+let humanScore = 0;
+let computerScore = 0;
+
+/* Button event listener */
+const btn = document.querySelector("#buttonContainer");
+
+btn.addEventListener("click", (event) => {
+    console.log(`${event.target.id} was clicked`);
+    playRound(event.target.id, getComputerChoice());
+});
+
 /* Generate computer's game choice */
 function getComputerChoice() {
 
@@ -17,14 +31,13 @@ function getHumanChoice() {
     return prompt("Choose rock, paper, or scissors.").toLowerCase();
 }
 
-    /* Yes, I could absolutely make these variables not global for better access, but 
-    I didn't want to refactor my functions to do it. */
-    // Score variables
-    let humanScore = 0;
-    let computerScore = 0;
-
 /* Plays one round of rock, paper, scissors, incrementing correct score value */
 function playRound(humanChoice, computerChoice) {
+
+    const choicesDisplay = document.querySelector('choices');
+    const roundResults = document.querySelector('roundResults');
+    const scoreDisplay = document.querySelector('score');
+    const matchResults = document.querySelector('matchResults');
 
     console.log(`Player chose ${humanChoice}. Computer chose ${computerChoice}.`);
     
@@ -38,20 +51,10 @@ function playRound(humanChoice, computerChoice) {
         console.log("Tie!");
     }
 
-    console.log(`Player score: ${humanScore} | Computer Score: ${computerScore}`);
+    // scoreDisplay.textContent = `Player score: ${humanScore} | Computer Score: ${computerScore}`;
 }
 
-/* Event listener */
-const btn = document.querySelector("#buttonContainer");
-
-btn.addEventListener("click", (event) => {
-    console.log(`${event.target.id} was clicked`);
-    playRound(event.target.id, getComputerChoice());
-});
-
-
-
-/* Plays a 5-round game of rock, paper, scissors. Sets score values to 0 at the start of each game. */
+/* Plays a 5-round game of rock, paper, scissors in the console. Sets score values to 0 at the start of each game. */
 // function playGame() {
 
 //     humanScore = 0;
