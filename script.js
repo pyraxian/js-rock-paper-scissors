@@ -36,27 +36,28 @@ function getHumanChoice() {
 /* Plays one round of rock, paper, scissors, incrementing correct score value */
 function playRound(humanChoice, computerChoice) {
 
-    const choicesDisplay = document.querySelector('choices');
-    const roundResults = document.querySelector('roundResults');
-    const scoreDisplay = document.querySelector('score');
-    const matchResults = document.querySelector('matchResults');
-
-    console.log(scoreDisplay.textContent);
+    const choicesDisplay = document.querySelector('#choices');
+    const roundResults = document.querySelector('#roundResults');
+    const scoreDisplay = document.querySelector('#score');
+    const matchResults = document.querySelector('#matchResults');
 
     console.log(`Player chose ${humanChoice}. Computer chose ${computerChoice}.`);
-    //choicesDisplay.textContent = `Player chose ${humanChoice}. Computer chose ${computerChoice}.`;
+    choicesDisplay.textContent = `Player chose ${humanChoice}. Computer chose ${computerChoice}.`;
     
     if (((humanChoice === 'rock') && (computerChoice === 'scissors')) || ((humanChoice === 'paper') && (computerChoice === 'rock')) || ((humanChoice === 'scissors') && (computerChoice === 'paper'))) {
         console.log("Player wins!");
+        roundResults.textContent = 'Player wins!';
         humanScore++;
     } else if (((humanChoice === 'rock') && (computerChoice === 'paper')) || ((humanChoice === 'paper') && (computerChoice === 'scissors')) || ((humanChoice === 'scissors') && (computerChoice === 'rock'))) {
         console.log("Computer wins!");
+        roundResults.textContent = 'Computer wins!'
         computerScore++;
     } else {
         console.log("Tie!");
+        roundResults.textContent = 'Tie!';
     }
 
-    //scoreDisplay.textContent = `Player score: ${humanScore} | Computer Score: ${computerScore}`;
+    scoreDisplay.textContent = `Player score: ${humanScore} | Computer Score: ${computerScore}`;
 }
 
 /* Plays a 5-round game of rock, paper, scissors in the console. Sets score values to 0 at the start of each game. */
